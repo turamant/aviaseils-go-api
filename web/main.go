@@ -38,9 +38,6 @@ func showCompany(w http.ResponseWriter, r *http.Request){
 func createCompany(w http.ResponseWriter, r *http.Request){
 	if r.Method != http.MethodPost{
 		w.Header().Set("Allow", http.MethodPost)
-		w.Header().Get("Cache-Control")
-		//w.WriteHeader(405)
-		//w.Write([]byte("Method Not Allowed"))
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed) //405
 		return
 	}
